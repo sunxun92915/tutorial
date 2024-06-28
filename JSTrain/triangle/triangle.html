@@ -6,7 +6,9 @@
     <body>
         <script>
             function star(i) {
+                // i個の行を作成するためのループ
                 for (var j =1; j <= i; j++) {
+                    // j個の列を作成するためのループ
                     for (var k =1; k<=j; k++) {
                         document.write('*');
                     }
@@ -14,11 +16,18 @@
                 }
             }
             do {
-                var n = prompt('please input a number');
+                // ユーザーに数値の入力を求める
+                var n = prompt('数字を入力してください（最大: 20）');
                 if(Number(n) >0 && parseInt(n) == parseFloat(n)){
-                    star(n);
+                    // 入力された数が条件に合致している場合、20以下の場合のみstar関数を呼び出して三角形を表示する
+                    if (n <= 20) {
+                        star(n);
+                    } else {
+                        alert('エラーです。20以下の数字を入力してください');
+                    }
                 } else {
-                    alert('error, please input a number');
+                    // エラーメッセージを表示し、再度入力を求める
+                    alert('エラーです。数字を入力してください');
                 }
             } while (!(Number(n) > 0 && parseInt(n) == parseFloat(n)));
         </script>
